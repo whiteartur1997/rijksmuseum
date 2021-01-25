@@ -1,3 +1,4 @@
+import classes from "*.module.css";
 import { AppBar, createStyles, TextField, Theme, Toolbar, Typography } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import React from "react";
@@ -78,7 +79,14 @@ const Navbar = () => {
           Rijksmuseum
         </Typography>
         <div>
-          <TextField id="filled-basic" label="Filled" variant="filled" />
+          <TextField
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+            id="filled-basic"
+            label="Filled"
+            variant="filled" />
         </div>
       </Toolbar>
     </AppBar>
