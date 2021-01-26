@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+:root {
+  --main-color: #D7CEC7;
+  --secondary-color: #76323F;
+  --main-text-color: #C09F80;
+  --secondary-text-color: #565656;
+}  

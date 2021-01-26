@@ -12,16 +12,15 @@ function App() {
   const cards = useSelector<AppStateType, number[]>(state => state.cards);
   const modalIsOpen = useSelector<AppStateType, boolean>(state => state.modalIsOpen);
 
-
   return (
-    <div className="App">
+    <div key={1} className="App">
       <Appbar />
       <MainContent cards={cards} />
       <div className="pageSizes">
         {
-          pageSizes.map(s => {
+          pageSizes.map((s, i) => {
             return(
-              <div>
+              <div key={i}>
                 {s}
               </div>
             )
