@@ -1,13 +1,15 @@
 import React from 'react';
 
 type CardType = {
-    content: any
+    image: string
+    descr: string
 }
 
 const Card: React.FC<CardType> = (props) => {
     return(
         <div>
-            Card
+            <img src={props.image} />
+            <span>{props.descr}</span>
         </div>
     )
 }

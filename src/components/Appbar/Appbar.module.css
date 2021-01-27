@@ -18,6 +18,12 @@
   font-size: 1.4em;
 }
 
+.appForm {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .selectContainer {
   display: flex;
   align-items: center;
@@ -33,4 +39,28 @@
 .selectContainer select {
   padding: 7px;
   border: 1px solid var(--main-text-color);
+}
+
+.appInput {
+  width: 50%;
+  border: 2px solid var(--main-text-color);
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.appInput:focus {
+  outline-color: var(--secondary-color);
+}
+
+.searchButton {
+  padding: 10px 15px;
+  background-color: var(--main-text-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.searchButton:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
 }

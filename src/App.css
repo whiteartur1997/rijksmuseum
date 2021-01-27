@@ -21,3 +21,7 @@ code {
   --main-text-color: #C09F80;
   --secondary-text-color: #565656;
 }  
+
+.App {
+  background-color: var(--main-color);
+}

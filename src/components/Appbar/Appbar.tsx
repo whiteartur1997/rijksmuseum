@@ -1,13 +1,21 @@
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType, changeCurrentOption, OptionsType } from '../../store/app-reducer';
 import s from './Appbar.module.css';
 
-const Appbar = () => {
+type AppbarType = {
+  queryString: string
+  searchOptions: OptionsType[]
+  currrentOption: string
+}
+
+const Appbar: React.FC<AppbarType> = ({ queryString, searchOptions, currrentOption }) => {
 
   const dispatch = useDispatch();
-  const searchOptions = useSelector<AppStateType, OptionsType[]>(state => state.searchOptions);
-  const currrentOption = useSelector<AppStateType, string>(state => state.currentOption);
+  
+  const queryChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeCurrentOption(e.target.value));
+  }
 
   const optionChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     if(e.target.value) {
@@ -19,7 +27,7 @@ const Appbar = () => {
     <div className={s.appbar}>
       <div className="container">
         <h1 className={s.title}>Rijksmuseum</h1>
-        <div>
+        <div className={s.appForm}>
           <div className={s.selectContainer}>
             <label>Order by:</label>
             <select onChange={optionChangeHandler} value={currrentOption} >
@@ -32,9 +40,12 @@ const Appbar = () => {
               }
           </select>
           </div>
-        
-          <input />
-          <button>Search</button>
+          <input 
+            className={s.appInput} 
+            type="text"
+            value={queryString}
+            onChange={queryChangeHandler} />
+          <button className={s.searchButton}>Search</button>
         </div>
       </div>
     </div>
